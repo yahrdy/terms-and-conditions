@@ -37,11 +37,11 @@ class TermsAndConditionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param TermsAndConditions $termsAndConditions
      * @return Response
      */
-    public function show(TermsAndConditions $termsAndConditions): Response
+    public function show($termsAndConditions): Response
     {
+        $termsAndConditions = TermsAndConditions::findOrFail($termsAndConditions);
         return response($termsAndConditions);
     }
 
@@ -50,11 +50,11 @@ class TermsAndConditionsController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param TermsAndConditions $termsAndConditions
      * @return Response
      */
-    public function update(Request $request, TermsAndConditions $termsAndConditions): Response
+    public function update(Request $request, $termsAndConditions): Response
     {
+        $termsAndConditions = TermsAndConditions::findOrFail($termsAndConditions);
         $termsAndConditions->update($request->only('terms_and_conditions'));
         return response($termsAndConditions);
     }
@@ -62,12 +62,12 @@ class TermsAndConditionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param TermsAndConditions $termsAndConditions
      * @return Response
      * @throws Exception
      */
-    public function destroy(TermsAndConditions $termsAndConditions): Response
+    public function destroy($termsAndConditions): Response
     {
+        $termsAndConditions = TermsAndConditions::findOrFail($termsAndConditions);
         $termsAndConditions->delete();
         return response($termsAndConditions);
     }
