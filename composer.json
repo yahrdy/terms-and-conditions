@@ -1,0 +1,17 @@
+{
+    "name": "hridoy/terms-and-conditions",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hridoy\\TermsAndConditions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hridoy",
+            "email": "yeasirarafat321@gmail.com"
+        }
+    ],
+    "require": {}
+}
